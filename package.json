@@ -1,5 +1,5 @@
 {
-  "name": "my-electron",
+  "name": "旻投电力运维平台",
   "version": "1.0.0",
   "main": "main.js",
   "license": "MIT",
@@ -8,24 +8,28 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder "
   },
   "devDependencies": {
     "electron": "^9.0.0",
     "electron-builder": "^22.6.1"
   },
+  "myClient": "旻投电力运维平台",
   "build": {
     "appId": "app.mintou.com",
     "mac": {
       "category": "game"
     },
     "win": {
-      "icon": "./build/head128.ico"
+      "icon": "./build/head512.ico"
     },
     "nsis": {
       "installerIcon": "./build/head128.ico",
       "uninstallerIcon": "./build/head512.ico",
-      "installerHeader": "./build/head512.ico"
+      "installerHeader": "./build/head512.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "旻投电力运维平台"
     }
   }
 }

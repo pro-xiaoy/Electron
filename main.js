@@ -1,5 +1,6 @@
 // app 模块是为了控制整个应用的生命周期设计的。
 // BrowserWindow 类让你有创建一个浏览器窗口的权力。
+const path = require("path");
 const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const nativeImage = require("electron").nativeImage;
 var overlay = nativeImage.createFromPath("icon.png");
@@ -9,11 +10,11 @@ const mainWindowURL = "http://218.2.247.130:18856/user/login";
 let mainWindow;
 
 function createWindow() {
-  console.log("createWindow......");
+  Menu.setApplicationMenu(null); // 菜单栏隐藏
+
   mainWindow = new BrowserWindow({
     maximizable: true, //支持最大化
     show: false, //为了让初始化窗口显示无闪烁，先关闭显示，等待加载完成后再显示。
-    // icon: "https://medical.3vyd.com/alk/prod/pc/icon/icon.ico"
   });
 
   // Emitted when the window is closed.
@@ -25,7 +26,6 @@ function createWindow() {
   mainWindow.maximize(); //打开时最大化打开，不是全屏，保留状态栏
   // })
 
-  // mainWindow.setOverlayIcon(overlay, "医敏")
   mainWindow.setTitle("旻投电力智能运维管理平台");
   mainWindow.setAutoHideMenuBar(true); //自动隐藏菜单
   mainWindow.loadURL(mainWindowURL);
