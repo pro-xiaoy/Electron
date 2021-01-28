@@ -11,7 +11,7 @@
     "dist": "electron-builder "
   },
   "devDependencies": {
-    "electron": "^9.0.0",
+    "electron": "^9.4.0",
     "electron-builder": "^22.6.1"
   },
   "myClient": "旻投电力运维平台",
